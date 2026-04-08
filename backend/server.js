@@ -7,6 +7,9 @@ const { sequelize } = require('./models/index');
 
 // Import routes
 const studentRoutes = require('./routes/students');
+const mentorRoutes = require('./routes/mentors');
+const scholarshipRoutes = require('./routes/scholarships');
+const meetingRoutes = require('./routes/meetings');
 
 const app = express();
 
@@ -16,6 +19,9 @@ app.use(express.json());
 
 // Routes
 app.use('/api/students', studentRoutes);
+app.use('/api/mentors', mentorRoutes);
+app.use('/api/scholarships', scholarshipRoutes);
+app.use('/api/meetings', meetingRoutes);
 
 // Test route
 app.get('/', (req, res) => {
