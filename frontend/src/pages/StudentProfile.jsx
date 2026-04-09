@@ -118,7 +118,7 @@ function StudentProfile() {
             <div style={{ flex: 1 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                 <div>
-                  <h1 style={{ fontSize: '24px', fontWeight: '700', marginBottom: '4px' }}>
+                  <h1 style={{ fontSize: '24px', fontWeight: '700', marginBottom: '4px', color: 'var(--ink)' }}>
                     {student.firstName} {student.lastName}
                   </h1>
                   <p style={{ color: 'var(--secondary)', marginBottom: '8px' }}>
