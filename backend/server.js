@@ -14,10 +14,15 @@ const meetingRoutes = require('./routes/meetings');
 const app = express();
 
 // Middleware
+const errorHandler = require('./middleware/errorHandler');
+const validateStudent = require('./middleware/validateStudent');
 app.use(cors());
 app.use(express.json());
+app.use(errorHandler);
+
 
 // Routes
+app.use('/api/students', validateStudent, studentRoutes);
 app.use('/api/students', studentRoutes);
 app.use('/api/mentors', mentorRoutes);
 app.use('/api/scholarships', scholarshipRoutes);

@@ -125,20 +125,33 @@ function StudentDirectory() {
                 {/* Avatar */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
                   <div style={{
-                    width: '48px',
-                    height: '48px',
-                    borderRadius: '50%',
-                    background: 'var(--primary-light)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '18px',
-                    fontWeight: '600',
-                    color: 'var(--primary)',
-                    flexShrink: 0
-                  }}>
-                    {student.firstName[0]}{student.lastName[0]}
-                  </div>
+  width: '48px',
+  height: '48px',
+  borderRadius: '50%',
+  background: 'var(--primary-light)',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  fontSize: '18px',
+  fontWeight: '600',
+  color: 'var(--primary)',
+  flexShrink: 0,
+  overflow: 'hidden'
+}}>
+  {student.avatarUrl ? (
+    <img
+      src={student.avatarUrl}
+      alt={`${student.firstName} ${student.lastName}`}
+      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+      onError={(e) => {
+        e.target.style.display = 'none';
+        e.target.parentNode.innerHTML = `${student.firstName[0]}${student.lastName[0]}`;
+      }}
+    />
+  ) : (
+    `${student.firstName[0]}${student.lastName[0]}`
+  )}
+</div>
                   <div>
                     <div style={{ fontWeight: '600', fontSize: '15px' }}>
                       {student.firstName} {student.lastName}

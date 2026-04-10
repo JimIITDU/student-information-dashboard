@@ -99,20 +99,33 @@ function StudentProfile() {
           <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start' }}>
             {/* Avatar */}
             <div style={{
-              width: '80px',
-              height: '80px',
-              borderRadius: '50%',
-              background: 'var(--primary-light)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '28px',
-              fontWeight: '700',
-              color: 'var(--primary)',
-              flexShrink: 0
-            }}>
-              {student.firstName[0]}{student.lastName[0]}
-            </div>
+  width: '80px',
+  height: '80px',
+  borderRadius: '50%',
+  background: 'var(--primary-light)',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  fontSize: '28px',
+  fontWeight: '700',
+  color: 'var(--primary)',
+  flexShrink: 0,
+  overflow: 'hidden'
+}}>
+  {student.avatarUrl ? (
+    <img
+      src={student.avatarUrl}
+      alt={`${student.firstName} ${student.lastName}`}
+      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+      onError={(e) => {
+        e.target.style.display = 'none';
+        e.target.parentNode.innerHTML = `${student.firstName[0]}${student.lastName[0]}`;
+      }}
+    />
+  ) : (
+    `${student.firstName[0]}${student.lastName[0]}`
+  )}
+</div>
 
             {/* Info */}
             <div style={{ flex: 1 }}>
