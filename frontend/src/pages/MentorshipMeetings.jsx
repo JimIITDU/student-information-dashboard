@@ -3,6 +3,9 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { getStudent, getMeetings, createMeeting, updateMeeting, deleteMeeting } from '../services/api';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
+import '../styles/global.css';
+import MeetingCard from '../components/MeetingCard';
+
 
 function MentorshipMeetings() {
   const { id } = useParams();
@@ -82,15 +85,6 @@ function MentorshipMeetings() {
       fetchData();
     } catch (err) {
       setError(err.message);
-    }
-  };
-
-  const getStatusColor = (status) => {
-    switch (status) {
-      case 'Completed': return 'badge-success';
-      case 'Scheduled': return 'badge-primary';
-      case 'Cancelled': return 'badge-danger';
-      default: return 'badge-secondary';
     }
   };
 
@@ -302,95 +296,13 @@ function MentorshipMeetings() {
         ) : (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             {filteredMeetings.map((meeting) => (
-              <div key={meeting.id} className="card">
-                <div style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'flex-start'
-                }}>
-                  <div style={{ flex: 1 }}>
-                    <div style={{
-                      display: 'flex', alignItems: 'center',
-                      gap: '12px', marginBottom: '8px'
-                    }}>
-                      <span style={{ fontWeight: '600', fontSize: '15px' }}>
-                        {new Date(meeting.date).toLocaleDateString('en-US', {
-                          weekday: 'long', year: 'numeric',
-                          month: 'long', day: 'numeric'
-                        })}
-                      </span>
-                      <span className={`badge ${getStatusColor(meeting.status)}`}>
-                        {meeting.status}
-                      </span>
-                    </div>
-                    <div style={{
-                      fontSize: '13px', color: 'var(--secondary)',
-                      marginBottom: '12px'
-                    }}>
-                      🕐 {meeting.duration} minutes
-                      {meeting.mentor && ` · with ${meeting.mentor.name}`}
-                    </div>
-
-                    {meeting.notes && (
-                      <div style={{
-                        padding: '10px 12px',
-                        background: 'var(--cream)',
-                        borderRadius: 'var(--radius-sm)',
-                        fontSize: '13px',
-                        color: 'var(--ink)',
-                        marginBottom: '8px'
-                      }}>
-                        {meeting.notes}
-                      </div>
-                    )}
-
-                    {meeting.actionItems?.length > 0 && (
-                      <div>
-                        <div style={{
-                          fontSize: '12px', fontWeight: '600',
-                          marginBottom: '4px', color: 'var(--secondary)'
-                        }}>
-                          ACTION ITEMS
-                        </div>
-                        {meeting.actionItems.map((item, i) => (
-                          <div key={i} style={{
-                            fontSize: '13px', color: 'var(--ink)',
-                            display: 'flex', alignItems: 'center', gap: '6px'
-                          }}>
-                            → {item}
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Actions */}
-                  <div style={{
-                    display: 'flex', flexDirection: 'column',
-                    gap: '8px', marginLeft: '24px'
-                  }}>
-                    <select
-                      className="form-input"
-                      value={meeting.status}
-                      onChange={(e) => handleStatusChange(meeting.id, e.target.value)}
-                      style={{ fontSize: '12px', padding: '4px 8px' }}
-                      aria-label="Update meeting status"
-                    >
-                      <option value="Scheduled">Scheduled</option>
-                      <option value="Completed">Completed</option>
-                      <option value="Cancelled">Cancelled</option>
-                    </select>
-                    <button
-                      className="btn btn-danger"
-                      onClick={() => handleDelete(meeting.id)}
-                      style={{ fontSize: '12px', padding: '4px 8px' }}
-                    >
-                      Delete
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
+  <MeetingCard
+    key={meeting.id}
+    meeting={meeting}
+    onStatusChange={handleStatusChange}
+    onDelete={handleDelete}
+  />
+))}
           </div>
         )}
       </div>

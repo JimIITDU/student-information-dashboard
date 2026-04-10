@@ -3,6 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { getStudent, getScholarships, createScholarship, updateScholarship, deleteScholarship } from '../services/api';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
+import ScholarshipCard from '../components/ScholarshipCard';
+import '../styles/global.css';
 
 function ScholarshipManagement() {
   const { id } = useParams();
@@ -86,16 +88,6 @@ function ScholarshipManagement() {
       fetchData();
     } catch (err) {
       setError(err.message);
-    }
-  };
-
-  const getStatusColor = (status) => {
-    switch (status) {
-      case 'Awarded': return 'badge-success';
-      case 'Applied': return 'badge-primary';
-      case 'Interview': return 'badge-purple';
-      case 'Rejected': return 'badge-danger';
-      default: return 'badge-secondary';
     }
   };
 
@@ -262,90 +254,13 @@ function ScholarshipManagement() {
         ) : (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             {scholarships.map((scholarship) => (
-              <div key={scholarship.id} className="card">
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
-                      <h3 style={{ fontSize: '16px', fontWeight: '600' }}>{scholarship.name}</h3>
-                      <span className={`badge ${getStatusColor(scholarship.status)}`}>
-                        {scholarship.status}
-                      </span>
-                    </div>
-                    <div style={{ fontSize: '13px', color: 'var(--secondary)', marginBottom: '12px' }}>
-                      {scholarship.provider} · Deadline: {new Date(scholarship.deadline).toLocaleDateString()}
-                    </div>
-
-                    {/* Requirements */}
-                    {scholarship.requirements?.length > 0 && (
-                      <div style={{ marginBottom: '12px', display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
-                        {scholarship.requirements.map((req, i) => (
-                          <span key={i} style={{
-                            padding: '2px 8px',
-                            background: 'var(--cream)',
-                            borderRadius: '4px',
-                            fontSize: '12px',
-                            color: 'var(--secondary)'
-                          }}>
-                            {req}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-
-                    {/* Essay status */}
-                    {scholarship.essayRequired && (
-                      <div style={{ fontSize: '12px', marginBottom: '8px' }}>
-                        Essay: {' '}
-                        <span style={{ color: scholarship.essaySubmitted ? 'var(--success)' : 'var(--danger)' }}>
-                          {scholarship.essaySubmitted ? '✓ Submitted' : '✗ Not submitted'}
-                        </span>
-                      </div>
-                    )}
-
-                    {scholarship.notes && (
-                      <div style={{
-                        padding: '8px 12px',
-                        background: 'var(--cream)',
-                        borderRadius: 'var(--radius-sm)',
-                        fontSize: '13px',
-                        color: 'var(--secondary)'
-                      }}>
-                        {scholarship.notes}
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Right side */}
-                  <div style={{ textAlign: 'right', marginLeft: '24px' }}>
-                    <div style={{ fontSize: '22px', fontWeight: '700', color: 'var(--success)', marginBottom: '12px' }}>
-                      ${scholarship.amount.toLocaleString()}
-                    </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                      <select
-                        className="form-input"
-                        value={scholarship.status}
-                        onChange={(e) => handleStatusChange(scholarship.id, e.target.value)}
-                        style={{ fontSize: '12px', padding: '4px 8px' }}
-                        aria-label="Update scholarship status"
-                      >
-                        <option value="Researching">Researching</option>
-                        <option value="Applied">Applied</option>
-                        <option value="Interview">Interview</option>
-                        <option value="Awarded">Awarded</option>
-                        <option value="Rejected">Rejected</option>
-                      </select>
-                      <button
-                        className="btn btn-danger"
-                        onClick={() => handleDelete(scholarship.id)}
-                        style={{ fontSize: '12px', padding: '4px 8px' }}
-                      >
-                        Delete
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+  <ScholarshipCard
+    key={scholarship.id}
+    scholarship={scholarship}
+    onStatusChange={handleStatusChange}
+    onDelete={handleDelete}
+  />
+))}
           </div>
         )}
       </div>
