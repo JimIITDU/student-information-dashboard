@@ -34,6 +34,8 @@
   --radius: 16px;
   --radius-sm: 10px;
   --radius-xs: 6px;
+  --bg: #f8fafc;      
+  --card: #ffffff;
 }
 
 html { scroll-behavior: smooth; }
@@ -66,9 +68,9 @@ input, select, textarea {
 
 /* ── LAYOUT ── */
 .container {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 48px;
   animation: fadeIn 0.4s ease;
 }
 
@@ -126,18 +128,12 @@ input, select, textarea {
 
 /* ── CARDS ── */
 .card {
-  background: var(--white);
+  background: var(--card);
   border: 1px solid rgba(226, 232, 240, 0.8);
   border-radius: var(--radius);
   padding: 24px;
   box-shadow: var(--shadow);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.card:hover {
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(99, 102, 241, 0.2);
-  transform: translateY(-2px);
 }
 
 /* ── BUTTONS ── */
