@@ -60,7 +60,7 @@ function StudentProfile() {
       'Applied': { bg: '#eff6ff', text: '#2563eb', dot: '#3b82f6', border: '#bfdbfe' },
       'Interview': { bg: '#faf5ff', text: '#9333ea', dot: '#a855f7', border: '#e9d5ff' },
       'Rejected': { bg: '#fef2f2', text: '#dc2626', dot: '#ef4444', border: '#fecaca' },
-      'Researching': { bg: '#f8fafc', text: '#64748b', dot: '#94a3b8', border: '#e2e8f0' }
+      'Researching': { bg: '#f8fafc', text: '#64748b', dot: '#64748b', border: '#e2e8f0' }
     };
     return map[status] || map['Researching'];
   };
@@ -84,7 +84,7 @@ function StudentProfile() {
           boxShadow: '0 8px 24px rgba(0,0,0,0.2)',
           border: '1px solid rgba(255,255,255,0.08)'
         }}>
-          <p style={{ fontSize: '11px', color: '#94a3b8', margin: '0 0 4px', fontWeight: '600' }}>{label}</p>
+          <p style={{ fontSize: '11px', color: '#64748b', margin: '0 0 4px', fontWeight: '600' }}>{label}</p>
           <p style={{ fontSize: '15px', color: '#ffffff', margin: 0, fontWeight: '700', fontVariantNumeric: 'tabular-nums' }}>
             {payload[0].value.toFixed(2)} GPA
           </p>
@@ -303,7 +303,7 @@ function StudentProfile() {
                   {student.gpa.toFixed(2)}
                 </div>
                 <div style={{
-                  fontSize: '11px', color: '#94a3b8', fontWeight: '600',
+                  fontSize: '11px', color: '#64748b', fontWeight: '600',
                   textTransform: 'uppercase', letterSpacing: '0.06em'
                 }}>
                   Cumulative GPA
@@ -333,7 +333,7 @@ function StudentProfile() {
                   <div style={{ fontWeight: '600', fontSize: '14px', color: '#0f172a' }}>
                     {student.mentor.name}
                   </div>
-                  <div style={{ fontSize: '12.5px', color: '#94a3b8', fontWeight: '450' }}>
+                  <div style={{ fontSize: '12.5px', color: '#64748b', fontWeight: '450' }}>
                     {student.mentor.title} at {student.mentor.company}
                   </div>
                 </div>
@@ -448,7 +448,7 @@ function StudentProfile() {
                 {stat.value}
               </div>
               <div style={{
-                fontSize: '11px', color: '#94a3b8', fontWeight: '500',
+                fontSize: '11px', color: '#64748b', fontWeight: '500',
                 lineHeight: '1.3'
               }}>
                 {stat.label} <span style={{ opacity: 0.7 }}>· {stat.sub}</span>
@@ -486,7 +486,7 @@ function StudentProfile() {
             >
               <span style={{
                 display: 'flex',
-                color: activeTab === tab.key ? '#6366f1' : '#94a3b8',
+                color: activeTab === tab.key ? '#6366f1' : '#64748b',
                 transition: 'color 0.2s'
               }}>
                 {tab.icon}
@@ -496,7 +496,7 @@ function StudentProfile() {
                 <span style={{
                   padding: '1px 7px', borderRadius: '6px',
                   background: activeTab === tab.key ? 'rgba(99,102,241,0.1)' : '#e2e8f0',
-                  color: activeTab === tab.key ? '#6366f1' : '#94a3b8',
+                  color: activeTab === tab.key ? '#6366f1' : '#64748b',
                   fontSize: '11px', fontWeight: '700',
                   fontVariantNumeric: 'tabular-nums'
                 }}>
@@ -532,7 +532,7 @@ function StudentProfile() {
                   }}>
                     GPA Trend
                   </h3>
-                  <p style={{ fontSize: '13px', color: '#94a3b8', fontWeight: '450' }}>
+                  <p style={{ fontSize: '13px', color: '#64748b', fontWeight: '450' }}>
                     Semester-over-semester performance
                   </p>
                 </div>
@@ -557,13 +557,13 @@ function StudentProfile() {
                   <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
                   <XAxis
                     dataKey="semester"
-                    tick={{ fontSize: 12, fill: '#94a3b8', fontWeight: '500' }}
+                    tick={{ fontSize: 12, fill: '#64748b', fontWeight: '500' }}
                     axisLine={{ stroke: '#e2e8f0' }}
                     tickLine={false}
                   />
                   <YAxis
                     domain={[2.0, 4.0]}
-                    tick={{ fontSize: 12, fill: '#94a3b8', fontWeight: '500' }}
+                    tick={{ fontSize: 12, fill: '#64748b', fontWeight: '500' }}
                     axisLine={false}
                     tickLine={false}
                   />
@@ -611,7 +611,7 @@ function StudentProfile() {
                   }}>
                     {creditsPercent}%
                   </span>
-                  <span style={{ fontSize: '11px', color: '#94a3b8', fontWeight: '500' }}>complete</span>
+                  <span style={{ fontSize: '11px', color: '#64748b', fontWeight: '500' }}>complete</span>
                 </div>
               </div>
               <div style={{
@@ -623,21 +623,21 @@ function StudentProfile() {
                   <div style={{ fontWeight: '700', color: '#0f172a', fontVariantNumeric: 'tabular-nums' }}>
                     {student.creditsCompleted}
                   </div>
-                  <div style={{ color: '#94a3b8', fontSize: '11px', fontWeight: '500' }}>Completed</div>
+                  <div style={{ color: '#64748b', fontSize: '11px', fontWeight: '500' }}>Completed</div>
                 </div>
                 <div style={{ width: '1px', background: '#e2e8f0' }} />
                 <div>
                   <div style={{ fontWeight: '700', color: '#0f172a', fontVariantNumeric: 'tabular-nums' }}>
                     {student.creditsRequired - student.creditsCompleted}
                   </div>
-                  <div style={{ color: '#94a3b8', fontSize: '11px', fontWeight: '500' }}>Remaining</div>
+                  <div style={{ color: '#64748b', fontSize: '11px', fontWeight: '500' }}>Remaining</div>
                 </div>
                 <div style={{ width: '1px', background: '#e2e8f0' }} />
                 <div>
                   <div style={{ fontWeight: '700', color: '#0f172a', fontVariantNumeric: 'tabular-nums' }}>
                     {student.creditsRequired}
                   </div>
-                  <div style={{ color: '#94a3b8', fontSize: '11px', fontWeight: '500' }}>Required</div>
+                  <div style={{ color: '#64748b', fontSize: '11px', fontWeight: '500' }}>Required</div>
                 </div>
               </div>
             </div>
@@ -698,7 +698,7 @@ function StudentProfile() {
                 }}>
                   Scholarship Applications
                 </h3>
-                <p style={{ fontSize: '13px', color: '#94a3b8', fontWeight: '450', marginTop: '2px' }}>
+                <p style={{ fontSize: '13px', color: '#64748b', fontWeight: '450', marginTop: '2px' }}>
                   {student.scholarships?.length || 0} total · ${totalAwarded.toLocaleString()} awarded
                 </p>
               </div>
@@ -742,14 +742,14 @@ function StudentProfile() {
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   margin: '0 auto 16px', border: '1px solid #e2e8f0'
                 }}>
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
                   </svg>
                 </div>
                 <h4 style={{ fontSize: '16px', fontWeight: '700', color: '#0f172a', marginBottom: '6px' }}>
                   No scholarships yet
                 </h4>
-                <p style={{ fontSize: '13.5px', color: '#94a3b8', fontWeight: '450' }}>
+                <p style={{ fontSize: '13.5px', color: '#64748b', fontWeight: '450' }}>
                   Start tracking scholarship opportunities for this student.
                 </p>
               </div>
@@ -790,7 +790,7 @@ function StudentProfile() {
                         }}>
                           {s.name}
                         </div>
-                        <div style={{ fontSize: '13px', color: '#94a3b8', fontWeight: '450', marginBottom: '8px' }}>
+                        <div style={{ fontSize: '13px', color: '#64748b', fontWeight: '450', marginBottom: '8px' }}>
                           {s.provider}
                         </div>
                         <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
@@ -807,14 +807,16 @@ function StudentProfile() {
                             }} />
                             {s.status}
                           </span>
-                          <span style={{
-                            fontSize: '12px', color: '#94a3b8', fontWeight: '450',
+                                                    <span style={{
+                            fontSize: '12px', color: '#64748b', fontWeight: '450',
                             display: 'inline-flex', alignItems: 'center', gap: '4px'
                           }}>
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                               <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
                             </svg>
-                            {daysLeft > 0 ? `${daysLeft}d left` : 'Past due'}
+                            {new Date(s.deadline).toLocaleString('en-US', { 
+                              month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' 
+                            })}
                           </span>
                         </div>
                       </div>
@@ -830,7 +832,7 @@ function StudentProfile() {
                           ${s.amount.toLocaleString()}
                         </div>
                         <div style={{
-                          fontSize: '11px', color: '#94a3b8', fontWeight: '500', marginTop: '2px'
+                          fontSize: '11px', color: '#64748b', fontWeight: '500', marginTop: '2px'
                         }}>
                           {s.currency}
                         </div>
@@ -857,7 +859,7 @@ function StudentProfile() {
                 }}>
                   Meeting History
                 </h3>
-                <p style={{ fontSize: '13px', color: '#94a3b8', fontWeight: '450', marginTop: '2px' }}>
+                <p style={{ fontSize: '13px', color: '#64748b', fontWeight: '450', marginTop: '2px' }}>
                   {completedMeetings} of {totalMeetings} completed
                 </p>
               </div>
@@ -901,7 +903,7 @@ function StudentProfile() {
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   margin: '0 auto 16px', border: '1px solid #e2e8f0'
                 }}>
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
                     <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                   </svg>
@@ -909,7 +911,7 @@ function StudentProfile() {
                 <h4 style={{ fontSize: '16px', fontWeight: '700', color: '#0f172a', marginBottom: '6px' }}>
                   No meetings scheduled
                 </h4>
-                <p style={{ fontSize: '13.5px', color: '#94a3b8', fontWeight: '450' }}>
+                <p style={{ fontSize: '13.5px', color: '#64748b', fontWeight: '450' }}>
                   Schedule a mentoring session for this student.
                 </p>
               </div>
@@ -954,7 +956,7 @@ function StudentProfile() {
                           </div>
                           <div style={{
                             display: 'flex', gap: '14px', alignItems: 'center',
-                            fontSize: '13px', color: '#94a3b8', fontWeight: '450'
+                            fontSize: '13px', color: '#64748b', fontWeight: '450'
                           }}>
                             <span style={{
                               display: 'inline-flex', alignItems: 'center', gap: '5px'
@@ -964,8 +966,8 @@ function StudentProfile() {
                                 <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
                                 <line x1="3" y1="10" x2="21" y2="10"/>
                               </svg>
-                              {new Date(m.date).toLocaleDateString('en-US', {
-                                month: 'short', day: 'numeric', year: 'numeric'
+                                                            {new Date(m.date).toLocaleString('en-US', {
+                                month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit'
                               })}
                             </span>
                             <span style={{

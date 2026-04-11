@@ -109,7 +109,7 @@ function ScholarshipManagement() {
 
   const statusColor = (status) => {
     const map = {
-      'Researching': { bg: '#f1f5f9', text: '#64748b', dot: '#94a3b8' },
+      'Researching': { bg: '#f1f5f9', text: '#64748b', dot: '#64748b' },
       'Applied': { bg: '#eff6ff', text: '#3b82f6', dot: '#3b82f6' },
       'Interview': { bg: '#fefce8', text: '#ca8a04', dot: '#eab308' },
       'Awarded': { bg: '#f0fdf4', text: '#16a34a', dot: '#22c55e' },
@@ -250,7 +250,7 @@ function ScholarshipManagement() {
               Scholarship Tracker
             </h1>
             <p style={{
-              color: '#94a3b8', fontSize: '14.5px', fontWeight: '450'
+              color: '#64748b', fontSize: '14.5px', fontWeight: '450'
             }}>
               Manage applications, track deadlines, and monitor award status
             </p>
@@ -403,7 +403,7 @@ function ScholarshipManagement() {
                 {stat.value}
               </div>
               <div style={{
-                fontSize: '11.5px', color: '#94a3b8', fontWeight: '600',
+                fontSize: '11.5px', color: '#64748b', fontWeight: '600',
                 textTransform: 'uppercase', letterSpacing: '0.04em'
               }}>
                 {stat.label}
@@ -421,7 +421,7 @@ function ScholarshipManagement() {
             marginBottom: '28px', flexWrap: 'wrap'
           }}>
             <span style={{
-              fontSize: '12px', fontWeight: '600', color: '#94a3b8',
+              fontSize: '12px', fontWeight: '600', color: '#64748b',
               textTransform: 'uppercase', letterSpacing: '0.04em',
               whiteSpace: 'nowrap'
             }}>
@@ -492,7 +492,7 @@ function ScholarshipManagement() {
                 }}>
                   New Scholarship Application
                 </h3>
-                <p style={{ fontSize: '13px', color: '#94a3b8', fontWeight: '450' }}>
+                <p style={{ fontSize: '13px', color: '#64748b', fontWeight: '450' }}>
                   Fill in the details below to track a new opportunity
                 </p>
               </div>
@@ -555,7 +555,7 @@ function ScholarshipManagement() {
                     <div style={{ position: 'relative' }}>
                       <span style={{
                         position: 'absolute', left: '14px', top: '50%',
-                        transform: 'translateY(-50%)', color: '#94a3b8',
+                        transform: 'translateY(-50%)', color: '#64748b',
                         fontSize: '14px', fontWeight: '600', pointerEvents: 'none'
                       }}>$</span>
                       <input
@@ -811,7 +811,7 @@ function ScholarshipManagement() {
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               margin: '0 auto 20px', border: '1px solid #e2e8f0'
             }}>
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
                 <polyline points="14 2 14 8 20 8"/>
                 <line x1="12" y1="18" x2="12" y2="12"/>
@@ -825,7 +825,7 @@ function ScholarshipManagement() {
               No scholarships tracked yet
             </h3>
             <p style={{
-              color: '#94a3b8', fontSize: '14px', marginBottom: '24px',
+              color: '#64748b', fontSize: '14px', marginBottom: '24px',
               lineHeight: '1.6', fontWeight: '450'
             }}>
               Start tracking scholarship opportunities to stay organized and never miss a deadline.

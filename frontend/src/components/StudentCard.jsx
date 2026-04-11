@@ -100,7 +100,7 @@ function StudentCard({ student }) {
           </div>
           <div style={{
             fontSize: '13px',
-            color: '#94a3b8',
+            color: '#64748b',
             whiteSpace: 'nowrap',
             overflow: 'hidden',
             textOverflow: 'ellipsis',
@@ -139,7 +139,7 @@ function StudentCard({ student }) {
         alignItems: 'center',
         gap: '7px'
       }}>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
           <path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/>
         </svg>
@@ -232,7 +232,7 @@ function StudentCard({ student }) {
             fontWeight: '700',
             textTransform: 'uppercase',
             letterSpacing: '0.06em',
-            color: '#94a3b8',
+            color: '#64748b',
             marginBottom: '6px'
           }}>Credits</div>
           <div style={{ 
@@ -246,7 +246,7 @@ function StudentCard({ student }) {
             <span style={{ 
               fontSize: '12px', 
               fontWeight: '500', 
-              color: '#94a3b8', 
+              color: '#64748b', 
               marginLeft: '2px' 
             }}>
               /{student.creditsRequired}
@@ -301,7 +301,7 @@ function StudentCard({ student }) {
           <div style={{ minWidth: 0 }}>
             <div style={{ 
               fontSize: '10px', 
-              color: '#94a3b8', 
+              color: '#64748b', 
               fontWeight: '600', 
               textTransform: 'uppercase', 
               letterSpacing: '0.05em',

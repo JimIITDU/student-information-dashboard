@@ -248,7 +248,7 @@ function StudentDirectory() {
                     {loading ? '—' : stat.value}
                   </div>
                   <div style={{
-                    fontSize: '11.5px', color: '#94a3b8', fontWeight: '600',
+                    fontSize: '11.5px', color: '#64748b', fontWeight: '600',
                     textTransform: 'uppercase', letterSpacing: '0.05em'
                   }}>
                     {stat.label}
@@ -280,7 +280,7 @@ function StudentDirectory() {
             }} />
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginLeft: '4px' }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginLeft: '4px' }}>
                 <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
               </svg>
 
@@ -347,7 +347,7 @@ function StudentDirectory() {
               background: '#e2e8f0', flexShrink: 0
             }} />
             <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                 <line x1="4" y1="6" x2="11" y2="6"/><line x1="4" y1="12" x2="9" y2="12"/><line x1="4" y1="18" x2="7" y2="18"/>
                 <polyline points="15 9 18 6 21 9"/><line x1="18" y1="6" x2="18" y2="18"/>
               </svg>
@@ -420,7 +420,7 @@ function StudentDirectory() {
               marginTop: '16px', flexWrap: 'wrap', paddingLeft: '4px'
             }}>
               <span style={{
-                fontSize: '12px', color: '#94a3b8', fontWeight: '600',
+                fontSize: '12px', color: '#64748b', fontWeight: '600',
                 textTransform: 'uppercase', letterSpacing: '0.04em'
               }}>
                 Active:
@@ -483,7 +483,7 @@ function StudentDirectory() {
                 </span>
               )}
               <span style={{
-                fontSize: '12px', color: '#94a3b8',
+                fontSize: '12px', color: '#64748b',
                 fontWeight: '500', marginLeft: '4px'
               }}>
                 → {students.length} result{students.length !== 1 ? 's' : ''}
@@ -528,7 +528,7 @@ function StudentDirectory() {
               animation: 'spin 0.8s linear infinite'
             }} />
             <span style={{
-              fontSize: '14px', color: '#94a3b8', fontWeight: '500'
+              fontSize: '14px', color: '#64748b', fontWeight: '500'
             }}>
               Loading students...
             </span>
@@ -568,7 +568,7 @@ function StudentDirectory() {
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               margin: '0 auto 24px', border: '1px solid #e2e8f0'
             }}>
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
               </svg>
             </div>

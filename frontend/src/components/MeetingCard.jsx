@@ -4,7 +4,7 @@ function MeetingCard({ meeting, onStatusChange, onDelete }) {
       case 'Completed': return { bg: '#f0fdf4', text: '#16a34a', dot: '#22c55e', border: '#bbf7d0' };
       case 'Scheduled': return { bg: '#eff6ff', text: '#2563eb', dot: '#3b82f6', border: '#bfdbfe' };
       case 'Cancelled': return { bg: '#fef2f2', text: '#dc2626', dot: '#ef4444', border: '#fecaca' };
-      default: return { bg: '#f8fafc', text: '#64748b', dot: '#94a3b8', border: '#e2e8f0' };
+      default: return { bg: '#f8fafc', text: '#64748b', dot: '#64748b', border: '#e2e8f0' };
     }
   };
 
@@ -69,11 +69,13 @@ function MeetingCard({ meeting, onStatusChange, onDelete }) {
             gap: '10px',
             flexWrap: 'wrap'
           }}>
-            {new Date(meeting.date).toLocaleDateString('en-US', {
+                        {new Date(meeting.date).toLocaleString('en-US', {
               weekday: 'short',
               year: 'numeric',
               month: 'short',
-              day: 'numeric'
+              day: 'numeric',
+              hour: 'numeric',
+              minute: '2-digit'
             })}
             <span style={{
               display: 'inline-flex',
@@ -104,7 +106,7 @@ function MeetingCard({ meeting, onStatusChange, onDelete }) {
             gap: '14px',
             alignItems: 'center',
             fontSize: '13px',
-            color: '#94a3b8',
+            color: '#64748b',
             fontWeight: '450',
             flexWrap: 'wrap'
           }}>
@@ -171,7 +173,7 @@ function MeetingCard({ meeting, onStatusChange, onDelete }) {
                 borderRadius: '8px',
                 border: '1.5px solid #fecaca',
                 background: '#ffffff',
-                color: '#94a3b8',
+                color: '#64748b',
                 fontSize: '12px',
                 fontWeight: '600',
                 cursor: 'pointer',
@@ -188,7 +190,7 @@ function MeetingCard({ meeting, onStatusChange, onDelete }) {
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = '#ffffff';
-                e.currentTarget.style.color = '#94a3b8';
+                e.currentTarget.style.color = '#64748b';
                 e.currentTarget.style.borderColor = '#fecaca';
               }}
             >
@@ -227,7 +229,7 @@ function MeetingCard({ meeting, onStatusChange, onDelete }) {
             }}>
               <span style={{
                 fontWeight: '600',
-                color: '#94a3b8',
+                color: '#64748b',
                 fontSize: '11px',
                 textTransform: 'uppercase',
                 letterSpacing: '0.04em',

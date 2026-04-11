@@ -114,28 +114,20 @@ function ScholarshipCard({ scholarship, onStatusChange, onDelete }) {
             marginBottom: '12px',
             flexWrap: 'wrap'
           }}>
-            <span style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '5px'
-            }}>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                <polyline points="9 22 9 12 15 12 15 22"/>
-              </svg>
-              {scholarship.provider}
-            </span>
-            <span style={{
+                        <span style={{
               display: 'inline-flex',
               alignItems: 'center',
               gap: '5px',
-              color: isPastDue ? '#dc2626' : '#94a3b8',
+              color: isPastDue ? '#dc2626' : '#64748b',
               fontWeight: isPastDue ? '600' : '450'
             }}>
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
               </svg>
-              {isPastDue ? 'Past due' : `${daysLeft}d left`}
+              {new Date(scholarship.deadline).toLocaleString('en-US', { 
+                month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' 
+              })}
+              {isPastDue && ' (Past due)'}
             </span>
           </div>
 

@@ -10,14 +10,20 @@ import './styles/global.css';
 function App() {
   return (
     <Router>
-      <div className="app">
+      {/* Flex column ensures the footer stays at the bottom */}
+      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <Navbar />
-        <Routes>
-          <Route path="/" element={<StudentDirectory />} />
-          <Route path="/student/:id" element={<StudentProfile />} />
-          <Route path="/student/:id/scholarships" element={<ScholarshipManagement />} />
-          <Route path="/student/:id/meetings" element={<MentorshipMeetings />} />
-        </Routes>
+        
+        {/* flex: 1 pushes the footer to the bottom if content is short */}
+        <div style={{ flex: 1 }}>
+          <Routes>
+            <Route path="/" element={<StudentDirectory />} />
+            <Route path="/student/:id" element={<StudentProfile />} />
+            <Route path="/student/:id/scholarships" element={<ScholarshipManagement />} />
+            <Route path="/student/:id/meetings" element={<MentorshipMeetings />} />
+          </Routes>
+        </div>
+
         <Footer />
       </div>
     </Router>

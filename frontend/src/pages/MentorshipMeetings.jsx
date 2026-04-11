@@ -233,7 +233,7 @@ function MentorshipMeetings() {
               Meetings & Mentoring
             </h1>
             <p style={{
-              color: '#94a3b8', fontSize: '14.5px', fontWeight: '450'
+              color: '#64748b', fontSize: '14.5px', fontWeight: '450'
             }}>
               Track sessions, notes, and action items between student and mentor
             </p>
@@ -380,7 +380,7 @@ function MentorshipMeetings() {
                 </div>
                 {student.mentor.email && (
                   <div style={{
-                    fontSize: '13px', color: '#94a3b8', fontWeight: '450',
+                    fontSize: '13px', color: '#64748b', fontWeight: '450',
                     display: 'inline-flex', alignItems: 'center', gap: '5px', marginTop: '2px'
                   }}>
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -422,7 +422,7 @@ function MentorshipMeetings() {
                 background: 'linear-gradient(135deg, #f8fafc, #f1f5f9)'
               }}>
                 <div style={{
-                  fontSize: '11px', fontWeight: '600', color: '#94a3b8',
+                  fontSize: '11px', fontWeight: '600', color: '#64748b',
                   textTransform: 'uppercase', letterSpacing: '0.05em',
                   marginBottom: '6px'
                 }}>
@@ -533,7 +533,7 @@ function MentorshipMeetings() {
                   {stat.value}
                 </div>
                 <div style={{
-                  fontSize: '11.5px', color: '#94a3b8', fontWeight: '600',
+                  fontSize: '11.5px', color: '#64748b', fontWeight: '600',
                   textTransform: 'uppercase', letterSpacing: '0.04em'
                 }}>
                   {stat.label}
@@ -583,7 +583,7 @@ function MentorshipMeetings() {
                 }}>
                   Schedule New Meeting
                 </h3>
-                <p style={{ fontSize: '13px', color: '#94a3b8', fontWeight: '450' }}>
+                <p style={{ fontSize: '13px', color: '#64748b', fontWeight: '450' }}>
                   With {student.mentor?.name || 'mentor'}
                 </p>
               </div>
@@ -691,7 +691,7 @@ function MentorshipMeetings() {
                     <div style={{
                       display: 'flex', alignItems: 'center', gap: '6px', marginLeft: '4px'
                     }}>
-                      <span style={{ fontSize: '12px', color: '#94a3b8', fontWeight: '500' }}>Custom:</span>
+                      <span style={{ fontSize: '12px', color: '#64748b', fontWeight: '500' }}>Custom:</span>
                       <input
                         type="number"
                         value={form.duration}
@@ -753,7 +753,7 @@ function MentorshipMeetings() {
                       color: '#475569', marginBottom: '6px', fontFamily: 'inherit'
                     }}>
                       Action Items
-                      <span style={{ fontSize: '11px', color: '#94a3b8', fontWeight: '450', marginLeft: '6px' }}>
+                      <span style={{ fontSize: '11px', color: '#64748b', fontWeight: '450', marginLeft: '6px' }}>
                         comma separated
                       </span>
                     </label>
@@ -878,7 +878,7 @@ function MentorshipMeetings() {
             position: 'relative',
             animation: 'tabFadeIn 0.3s ease'
           }}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{
               position: 'absolute', left: '14px', top: '50%',
               transform: 'translateY(-50%)', pointerEvents: 'none', zIndex: 1
             }}>
@@ -927,7 +927,7 @@ function MentorshipMeetings() {
               <div style={{
                 position: 'absolute', right: '44px', top: '50%',
                 transform: 'translateY(-50%)',
-                fontSize: '12px', color: '#94a3b8', fontWeight: '600',
+                fontSize: '12px', color: '#64748b', fontWeight: '600',
                 pointerEvents: 'none'
               }}>
                 {filteredMeetings.length}

@@ -57,7 +57,7 @@ function LoadingSpinner() {
 
       {/* Loading text */}
       <p style={{
-        color: '#94a3b8',
+        color: '#64748b',
         fontSize: '14px',
         fontWeight: '500',
         position: 'relative',
