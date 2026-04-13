@@ -5,7 +5,7 @@ function ScholarshipCard({ scholarship, onStatusChange, onDelete }) {
       case 'Applied': return { bg: '#eff6ff', text: '#2563eb', dot: '#3b82f6', border: '#bfdbfe' };
       case 'Interview': return { bg: '#faf5ff', text: '#9333ea', dot: '#a855f7', border: '#e9d5ff' };
       case 'Rejected': return { bg: '#fef2f2', text: '#dc2626', dot: '#ef4444', border: '#fecaca' };
-      default: return { bg: '#f8fafc', text: '#64748b', dot: '#94a3b8', border: '#e2e8f0' };
+      default: return { bg: '#f8fafc', text: '#64748b', dot: '#64748b', border: '#e2e8f0' };
     }
   };
 
@@ -109,7 +109,7 @@ function ScholarshipCard({ scholarship, onStatusChange, onDelete }) {
             gap: '16px',
             alignItems: 'center',
             fontSize: '13px',
-            color: '#94a3b8',
+            color: '#64748b',
             fontWeight: '450',
             marginBottom: '12px',
             flexWrap: 'wrap'
@@ -182,7 +182,7 @@ function ScholarshipCard({ scholarship, onStatusChange, onDelete }) {
             ${scholarship.amount.toLocaleString()}
           </div>
           {scholarship.currency && (
-            <div style={{ fontSize: '11px', color: '#94a3b8', fontWeight: '500', marginBottom: '4px' }}>
+            <div style={{ fontSize: '11px', color: '#64748b', fontWeight: '500', marginBottom: '4px' }}>
               {scholarship.currency}
             </div>
           )}
@@ -220,7 +220,7 @@ function ScholarshipCard({ scholarship, onStatusChange, onDelete }) {
                 borderRadius: '8px',
                 border: '1.5px solid #fecaca',
                 background: '#ffffff',
-                color: '#94a3b8',
+                color: '#64748b',
                 fontSize: '12px',
                 fontWeight: '600',
                 cursor: 'pointer',
@@ -237,7 +237,7 @@ function ScholarshipCard({ scholarship, onStatusChange, onDelete }) {
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = '#ffffff';
-                e.currentTarget.style.color = '#94a3b8';
+                e.currentTarget.style.color = '#64748b';
                 e.currentTarget.style.borderColor = '#fecaca';
               }}
             >
@@ -267,7 +267,7 @@ function ScholarshipCard({ scholarship, onStatusChange, onDelete }) {
             <div style={{ flex: '1 1 200px' }}>
               <div style={{
                 fontWeight: '600',
-                color: '#94a3b8',
+                color: '#64748b',
                 fontSize: '11px',
                 textTransform: 'uppercase',
                 letterSpacing: '0.04em',
@@ -307,7 +307,7 @@ function ScholarshipCard({ scholarship, onStatusChange, onDelete }) {
             }}>
               <span style={{
                 fontWeight: '600',
-                color: '#94a3b8',
+                color: '#64748b',
                 fontSize: '11px',
                 textTransform: 'uppercase',
                 letterSpacing: '0.04em',
